@@ -8,4 +8,10 @@
   <h2> &#9744 This task is not compleded </h2>
 <% end %>
 
+<%= link_to "Edit this task", edit_task_path(@task)%>
+<h1>---</h1>
+<%= link_to "Delete this task", task_path(@task), method: :delete%>
+<h1>---</h1>
 <%= link_to "Back to tasks list", tasks_path%>
+
+<!-- , data: {confirm: "Are you sure?"}  -->
