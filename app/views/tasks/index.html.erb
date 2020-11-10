@@ -1,5 +1,11 @@
+<h1>All my tasks</h1>
+
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.title%> <strong>--- details:</strong> <%=task.details%></li>
+    <% if task.completed == true %>
+      <li>&#9745 <%= task.title%> <strong>--- details:</strong> <%=task.details%></li>
+    <% else %>
+      <li>&#9744 <%= task.title%> <strong>--- details:</strong> <%=task.details%></li>
+    <% end %>
   <% end %>
 </ul>
