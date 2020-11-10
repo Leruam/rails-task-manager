@@ -3,9 +3,10 @@
 <ul>
   <% @tasks.each do |task| %>
     <% if task.completed == true %>
-      <li>&#9745 <%= task.title%> <strong>--- details:</strong> <%=task.details%></li>
+      <li>&#9745 <%= link_to "#{task.title}", task_path(task.id) %></li>
     <% else %>
-      <li>&#9744 <%= task.title%> <strong>--- details:</strong> <%=task.details%></li>
+      <li>&#9744 <%= link_to "#{task.title}", task_path(task.id) %></li>
     <% end %>
   <% end %>
 </ul>
+

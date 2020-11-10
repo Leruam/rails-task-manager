@@ -1,0 +1,11 @@
+<h1>Task : <%= @task.title %>  </h1>
+
+<h2> <%= @task.details %></h2>
+
+<% if @task.completed == true %>
+  <h2> &#9745 This task is completed and that's a hell of an achievement !</h2>
+<% else %>
+  <h2> &#9744 This task is not compleded </h2>
+<% end %>
+
+<%= link_to "Back to tasks list", tasks_path%>
