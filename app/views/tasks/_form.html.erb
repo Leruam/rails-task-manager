@@ -1,0 +1,14 @@
+<%= form_for(task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <% if task.new_record? == false%>
+  <%# new_record retourne true si task est pas encore save %>
+    <%= f.label :completed %>
+    <%= f.text_field :completed %>
+  <% end %>
+  <%= f.submit %>
+  <!-- dans le f.submit, c'est implicite qu'on a une méthode "patch" -->
+  <!-- et donc rails comprend que ça retour un objet Task avec le même id dans params dans l'url spécifiée -->
+<% end %>
